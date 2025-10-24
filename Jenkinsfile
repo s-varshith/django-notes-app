@@ -14,7 +14,7 @@ pipeline {
         }
         stage('deploy') {
             steps{
-                sh 'docker run -d -p 8000:8000 notes-app:latest'
+                sh 'docker compose -f docker-compose.yml up -d'
             }
         }
     }
