@@ -12,5 +12,10 @@ pipeline {
                 sh 'docker build --pull -t notes-app:latest .'
             }
         }
+        stage('deploy') {
+            steps{
+                sh 'docker run -d -p 8000:8000 notes-app:latest'
+            }
+        }
     }
 }
