@@ -9,7 +9,6 @@ pipeline {
         }
         stage('docker') {
             steps{
-                sh 'sudo apt install docker.io'
                 sh 'docker build --pull -t notes-app:latest .'
             }
         }
